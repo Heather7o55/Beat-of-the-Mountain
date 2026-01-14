@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9034773073569951452}
   - component: {fileID: 7229416800127226516}
   - component: {fileID: 2481983317795703921}
-  - component: {fileID: 3412193044849847219}
   - component: {fileID: 5421662540136008520}
   m_Layer: 0
   m_Name: PostEffectController
@@ -95,42 +94,6 @@ MonoBehaviour:
   ditherThreshold: 2
   ditherStrength: 0.71
   ditherScale: 2.57
---- !u!114 &3412193044849847219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4424344826981003676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba9292ae7492cc40aa7a655d50b67f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeProfile: {fileID: 11400000, guid: 6ea378ec206a3e81fbc118c6038101c0, type: 2}
-  isEnabled: 1
-  scanlinesWeight: -0.44
-  noiseWeight: 0.2
-  screenBendX: 3
-  screenBendY: 3
-  vignetteAmount: 2.11
-  vignetteSize: 2.4
-  vignetteRounding: 5.26
-  vignetteSmoothing: 0.2
-  scanLinesDensity: 200
-  scanLinesSpeed: -10
-  noiseAmount: 250
-  chromaticRed: {x: 0.002, y: -0.002}
-  chromaticGreen: {x: -0.002, y: 0.002}
-  chromaticBlue: {x: 0, y: 0}
-  grilleOpacity: 0.2
-  grilleCounterOpacity: 0.3
-  grilleResolution: 640
-  grilleCounterResolution: 380
-  grilleBrightness: 16
-  grilleUvRotation: 90
-  grilleUvMidPoint: 0.5
-  grilleShift: {x: 1, y: 1, z: 1}
 --- !u!114 &5421662540136008520
 MonoBehaviour:
   m_ObjectHideFlags: 0

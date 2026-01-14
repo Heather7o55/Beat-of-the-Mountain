@@ -1,84 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7268622276910365992
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4265a041954897941afec871c608473b, type: 3}
-  m_Name: Crt
-  m_EditorClassIdentifier: 
-  active: 1
-  scanlinesWeight:
-    m_OverrideState: 1
-    m_Value: 5.08
-  noiseWeight:
-    m_OverrideState: 1
-    m_Value: 0.84
-  screenBendX:
-    m_OverrideState: 1
-    m_Value: 3
-  screenBendY:
-    m_OverrideState: 1
-    m_Value: 3
-  vignetteAmount:
-    m_OverrideState: 1
-    m_Value: 0.98
-  vignetteSize:
-    m_OverrideState: 1
-    m_Value: 2.06
-  vignetteRounding:
-    m_OverrideState: 1
-    m_Value: 5.26
-  vignetteSmoothing:
-    m_OverrideState: 1
-    m_Value: 0.2
-  scanlinesDensity:
-    m_OverrideState: 1
-    m_Value: 200
-  scanlinesSpeed:
-    m_OverrideState: 1
-    m_Value: 200
-  noiseAmount:
-    m_OverrideState: 1
-    m_Value: 250
-  chromaticRed:
-    m_OverrideState: 1
-    m_Value: {x: 0.002, y: -0.002}
-  chromaticGreen:
-    m_OverrideState: 1
-    m_Value: {x: -0.002, y: 0.002}
-  chromaticBlue:
-    m_OverrideState: 1
-    m_Value: {x: 0, y: 0}
-  grilleOpacity:
-    m_OverrideState: 1
-    m_Value: 0.2
-  grilleCounterOpacity:
-    m_OverrideState: 1
-    m_Value: 0.3
-  grilleResolution:
-    m_OverrideState: 1
-    m_Value: 640
-  grilleCounterResolution:
-    m_OverrideState: 1
-    m_Value: 380
-  grilleUvRotation:
-    m_OverrideState: 1
-    m_Value: 90
-  grilleBrightness:
-    m_OverrideState: 1
-    m_Value: 16
-  grilleUvMidPoint:
-    m_OverrideState: 1
-    m_Value: 0.5
-  grilleShift:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1}
 --- !u!114 &-6254571510243523545
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -213,7 +134,7 @@ MonoBehaviour:
     m_Value: 1
   ditherThreshold:
     m_OverrideState: 1
-    m_Value: 5.26
+    m_Value: 2
   ditherStrength:
     m_OverrideState: 1
     m_Value: 0.71
@@ -282,7 +203,6 @@ MonoBehaviour:
   - {fileID: 169896938054019971}
   - {fileID: -2649047749314681680}
   - {fileID: -758010384845797820}
-  - {fileID: -7268622276910365992}
   - {fileID: 2037966310670508477}
   - {fileID: -3910771124054489421}
   - {fileID: 6936580531359988608}
@@ -357,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   color:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -385,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 0
