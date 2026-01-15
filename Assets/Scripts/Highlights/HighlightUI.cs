@@ -12,6 +12,6 @@ public class HighlightUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        highlight.SetActive(false);;
+        highlight.SetActive(false);
     }
 }
