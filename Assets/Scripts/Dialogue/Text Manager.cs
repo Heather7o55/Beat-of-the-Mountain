@@ -31,12 +31,12 @@ public class TextManager : MonoBehaviour
         for(int i = 0; i < letters.Length; i++)
         { 
             //TODO Torture yourself with regular expressions for zero fucking gain, because you're an idiot obsessed with "clean code"
-            if(/*regex goes here*/)
-            else 
-            {
-                dialogueText.maxVisibleCharacters++;
-                yield return new WaitForSeconds(typingSpeed);
-            }
+            // if(/*regex goes here*/)
+            // else 
+            // {
+            //     dialogueText.maxVisibleCharacters++;
+            //     yield return new WaitForSeconds(typingSpeed);
+            // }
         }
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
