@@ -27,23 +27,15 @@ public class TextManager : MonoBehaviour
         canContinueToNextLine = false;
 
         bool isAddingRichTextTag = false;
-        char[] letters = line.ToCharArray();
-        for(int i = 0; i < letters.Length; i++)
-        { 
-            //TODO Torture yourself with regular expressions for zero fucking gain, because you're an idiot obsessed with "clean code"
-            // if(/*regex goes here*/)
-            // else 
-            // {
-            //     dialogueText.maxVisibleCharacters++;
-            //     yield return new WaitForSeconds(typingSpeed);
-            // }
-        }
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
             // TODO Click to auto complete
-
-            // check for rich text tag, if found, add it without waiting
+            if(Input.GetButton("Fire1"))
+            {
+                dialogueText.maxVisibleCharacters = line.Length;
+            }
+            // check for rich text tag, if found, add it without waiting (i did not write this implementation, but it works, as much as i think it's ugly)
             if (letter == '<' || isAddingRichTextTag) 
             {
                 isAddingRichTextTag = true;
@@ -53,7 +45,11 @@ public class TextManager : MonoBehaviour
                 }
             }
             // if not rich text, add the next letter and wait a small time
-            
+            else
+            {
+                dialogueText.maxVisibleCharacters++;
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
 
         // actions to take after the entire line has finished displaying
