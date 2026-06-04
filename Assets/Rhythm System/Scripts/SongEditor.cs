@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
-// Beginnings of a custom song editor within unity, useless for now, but have begun outlining.
-// Unity's docs in this area are a little vague, so might take a bit before its working.
-// Following this tutorial https://youtu.be/34736DHWzaI but will need a lot of adapting and further research.
+// This class is an extension of rhythm manager, as most of the functions it needs to work are contained within that class, because i know how to write good fucking code.
 public class SongEditorWindow : RhythmManager
 {
+    // This is for the visuals which represents, when beat's happen in playback mode.
     public GameObject[] visuals;
     public bool playbackMode = false;
     public int lastBeat;
     /* This actually probably wants to be an engine thing, rather than a window? The unity custom tool docs are bad and 
     i don't know if it's best suited to it.*/
-    void Start()
-    {
-        LoadSong();
-    }
     void Update()
     {
         if(activeSong == null) return;
@@ -29,6 +24,7 @@ public class SongEditorWindow : RhythmManager
             AddBeat(GetLaneKey());
         
     }
+    // This allows the rhythm manager to playback the charted song, so your can sure your chart is on beat
     public void Playback()
     {
         if(lastBeat == currentBeat) return;
@@ -47,6 +43,7 @@ public class SongEditorWindow : RhythmManager
         activeSong.beatMap.Add(new Beat(currentBeat, lane));
         Debug.Log("added beat");
     }
+    // This function calculates the Beat Length In Seconds & Total Beats. I know its a confusing name, but i wasn't gonna type all that out
     public void CalculateBLISTB()
     {
         activeSong.beatLengthInSeconds = 60f / activeSong.bpm;

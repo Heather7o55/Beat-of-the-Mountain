@@ -15,6 +15,7 @@ public struct Beat
         Position = position;
         Lane = lane;
     }
+    // These operators allow me to do simple comparison operators on a beat struct, making life way easier
     public static bool operator ==(Beat i, Beat j)
     {
         return i.Equals(j);

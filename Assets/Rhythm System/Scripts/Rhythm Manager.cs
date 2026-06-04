@@ -9,13 +9,18 @@ public class RhythmManager : MonoBehaviour
 
     public int score;
     public Song activeSong = new Song();
+    // Song position is seconds, but actually accurate unlike Unity accurate
     public float songPosition;
+    // Current beat in out of total beats
     public int currentBeat;
+    // Delay between the audio system and Unity
     public float dspDelay;
     public AudioSource speaker;
+    // C# stores filepaths as strings, these allow me to set those filepaths from within the unity editor
     public string LoadSongFilepath;
     public string SaveSongFilepath;
 
+    // This function keeps the primary beat variables updated and in time/sync, it only runs when the song is active, and if the song is completed it sets the song to be inactive
     public void UpdateSongPosition()
     {
         if(currentBeat >= activeSong.totalBeats) activeSong.active = false;
@@ -23,6 +28,7 @@ public class RhythmManager : MonoBehaviour
         songPosition = (float) (AudioSettings.dspTime -dspDelay) -activeSong.songAudioOffset;
         currentBeat = (int) (songPosition / activeSong.beatLengthInSeconds);
     }
+    // This function Sets the song to active, starts playing the audio, and records the dsp-delay, which is the delay between the song playing and unity updating
     public void StartSong()
     {
         activeSong.active = true;
@@ -30,6 +36,7 @@ public class RhythmManager : MonoBehaviour
         speaker.Play();
         dspDelay = (float) AudioSettings.dspTime;
     }
+    // This detects if a beat passed to it is "the same" as the current beat in the beatmap, this is intended to be used for scoring, however it has uses in other places.
     public bool OnBeatPerfect(int position, int lane)
     {
         Beat beat = new Beat(position, lane);
@@ -39,6 +46,7 @@ public class RhythmManager : MonoBehaviour
         }
         return false;
     }
+    // This detects if a beat passed to it is "the same" as the current beat in the beatmap with a +1-1 margin of error, this is used for scoring
     public bool OnBeat(int position, int lane)
     {
         Beat beat = new Beat(position, lane);
@@ -49,10 +57,12 @@ public class RhythmManager : MonoBehaviour
         }
         return false;
     }
+    // This function is intended to be used to ensure you can keep visuals and other things in time with the music/beat, this is an idea taken from the blog
     public bool BeatPulse(float lastBeat)
     {
         return songPosition > lastBeat + activeSong.beatLengthInSeconds;
     }
+    // Wrapper functions around the json load/save song utilities
     public void LoadSong()
     {
         activeSong = Song.LoadSong(LoadSongFilepath);
@@ -61,7 +71,7 @@ public class RhythmManager : MonoBehaviour
     {
         Song.SaveSong(activeSong,SaveSongFilepath);
     }
-//ALL OF THIS IS BAD CODE, PLEASE REWRITE IT IN THE MORNING JESUS CHRIST
+    //ALL OF THIS IS BAD CODE, PLEASE REWRITE IT IN THE MORNING JESUS CHRIST, its currently handling player input, but there has to be a cleaner way i swear
     public bool RhythmKeyPressed()
     {
         if(!activeSong.active) return false;
