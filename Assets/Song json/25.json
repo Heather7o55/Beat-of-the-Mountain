@@ -1,0 +1,11 @@
+{
+    "active": false,
+    "songName": "New Song",
+    "songAudio": {
+        "instanceID": 43934
+    },
+    "songAudioOffset": 0.0,
+    "bpm": 150,
+    "beatLengthInSeconds": 0.4000000059604645,
+    "totalBeats": 379
+}
