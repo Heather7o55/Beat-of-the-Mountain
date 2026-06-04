@@ -31,7 +31,7 @@ public class SongEditorWindow : RhythmManager
         lastBeat = currentBeat;
         for(int i = 1; i <=4; i++)
         {
-            if(OnBeatPerfect(currentBeat, i)) 
+            if(OnBeatPerfect(new Beat(currentBeat, i))) 
             {
                 var tmp = Instantiate(visuals[i], gameObject.transform);
                 tmp.GetComponent<Tmpvisual>().destory(activeSong.beatLengthInSeconds * 0.7f);

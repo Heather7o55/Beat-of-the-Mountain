@@ -37,9 +37,8 @@ public class RhythmManager : MonoBehaviour
         dspDelay = (float) AudioSettings.dspTime;
     }
     // This detects if a beat passed to it is "the same" as the current beat in the beatmap, this is intended to be used for scoring, however it has uses in other places.
-    public bool OnBeatPerfect(int position, int lane)
+    public bool OnBeatPerfect(Beat beat)
     {
-        Beat beat = new Beat(position, lane);
         if(activeSong.beatMap.Any(tmp => tmp == beat))
         {
             return true;
@@ -47,9 +46,8 @@ public class RhythmManager : MonoBehaviour
         return false;
     }
     // This detects if a beat passed to it is "the same" as the current beat in the beatmap with a +1-1 margin of error, this is used for scoring
-    public bool OnBeat(int position, int lane)
+    public bool OnBeat(Beat beat)
     {
-        Beat beat = new Beat(position, lane);
         if(activeSong.beatMap.Any(tmp => tmp == new Beat(beat.Position +1, beat.Lane) || 
         activeSong.beatMap.Any(tmp => tmp == new Beat(beat.Position -1, beat.Lane))))
         {
