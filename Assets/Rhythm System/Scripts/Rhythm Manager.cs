@@ -6,7 +6,7 @@ using System.Linq;
 // Worth us both looking through I think.
 public class RhythmManager : MonoBehaviour
 {
-
+    public TMPro.TextMeshProUGUI text;
     public int score;
     public Song activeSong = new Song();
     // Song position is seconds, but actually accurate unlike Unity accurate
@@ -21,6 +21,26 @@ public class RhythmManager : MonoBehaviour
     public string SaveSongFilepath;
 
     // This function keeps the primary beat variables updated and in time/sync, it only runs when the song is active, and if the song is completed it sets the song to be inactive
+    void Update()
+    {
+        if(activeSong == null) return;
+        UpdateSongPosition();
+        Debug.Log(currentBeat);
+        Debug.Log(songPosition);
+        if(RhythmKeyPressed() && GetLaneKey() != 0)
+        {
+            if(OnBeatPerfect(new Beat(currentBeat,GetLaneKey())))
+            {
+                score += 100;
+            }
+            else if(OnBeat(new Beat(currentBeat,GetLaneKey())))
+            {
+                score += 50;
+            }
+
+        }
+        text.text = $"Score: {score}";
+    }
     public void UpdateSongPosition()
     {
         if(currentBeat >= activeSong.totalBeats) activeSong.active = false;
