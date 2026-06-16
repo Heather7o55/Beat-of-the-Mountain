@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StarsTex:
-        m_Texture: {fileID: 8900000, guid: 8872a522d7da63c4095c44ca9bf0964b, type: 3}
+        m_Texture: {fileID: 8900000, guid: c143976da729ff447a3f0652ebe5c25f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SunTex:
@@ -42,12 +42,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CloudsHeight: 0
-    - _CloudsOffset: 0.2
+    - _CloudsHeight: -0.139
+    - _CloudsOffset: 0.026
     - _CloudsRotationSpeed: 0
-    - _Exposure: 1
-    - _MoonSize: 1
-    - _StarsExtinction: 2
+    - _Exposure: 1.26
+    - _MoonSize: 1.05
+    - _StarsExtinction: 5.71
     - _StarsTwinklingSpeed: 0
     - _SunSize: 1
     m_Colors:

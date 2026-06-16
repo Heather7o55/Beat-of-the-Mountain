@@ -5,11 +5,11 @@ public class SignSpawner : MonoBehaviour
 {
     public RhythmManager rhythmManager;
     public int lastBeat;
-    public Transform spawn;
-    public Transform destroy;
     public GameObject leftTurn;
     public GameObject rightTurn;
-    public List<GameObject> signs = new List<GameObject>();
+    public GameObject spawn;
+    public GameObject destroy;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,11 +20,25 @@ public class SignSpawner : MonoBehaviour
     void Update()
     {
         if(!rhythmManager.activeSong.active) return;
-        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 2))) signs.Add(Instantiate(leftTurn));
-        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 4))) signs.Add(Instantiate(rightTurn));
-        foreach(GameObject i in signs)
+        SpawnSigns();
+    }
+    private void SpawnSigns()
+    {
+        if(lastBeat == rhythmManager.currentBeat) return;
+        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 2)))
         {
-            
+            var i = Instantiate(leftTurn);
+            i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
+            i.GetComponent<SignRenderer>().spawn = spawn;
+            i.GetComponent<SignRenderer>().destroy = destroy;
         }
+        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 4)))
+        {
+            var i = Instantiate(rightTurn);
+            i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
+            i.GetComponent<SignRenderer>().spawn = spawn;
+            i.GetComponent<SignRenderer>().destroy = destroy;
+        }
+        lastBeat = rhythmManager.currentBeat;
     }
 }

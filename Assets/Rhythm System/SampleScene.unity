@@ -1099,6 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653202db77b463f3ab4743c35db83a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
   score: 0
   activeSong:
     active: 0
@@ -1113,8 +1114,10 @@ MonoBehaviour:
   currentBeat: 0
   dspDelay: 0
   speaker: {fileID: 1047208038}
-  LoadSongFilepath: /home/heather/Song json/OSC.json
-  SaveSongFilepath: /home/heather/Song json/OSC.json
+  LoadSongFilepath: C:\Users\heath.beaumont.540_a\Beat-of-the-Mountain\Assets\Rhythm
+    System\Song json\OSC.json
+  SaveSongFilepath: C:\Users\heath.beaumont.540_a\Beat-of-the-Mountain\Assets\Rhythm
+    System\Song json\OSC.json
   visuals:
   - {fileID: 0}
   - {fileID: 2412840863462103095, guid: bb7082ac97187841c90980e7110ba075, type: 3}

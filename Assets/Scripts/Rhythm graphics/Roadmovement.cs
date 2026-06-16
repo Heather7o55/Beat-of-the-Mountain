@@ -7,7 +7,7 @@ public class Roadmovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("spawned");
+        //Debug.Log("spawned");
         rb.linearVelocity = new Vector3(0,0,1) * movementSpeed;
     }
 }
