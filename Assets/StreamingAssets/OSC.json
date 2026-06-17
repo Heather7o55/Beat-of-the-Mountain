@@ -1,0 +1,827 @@
+{
+    "active": false,
+    "songName": "OCS 1",
+    "audioFilepath": "Songs/OSC",
+    "songAudioOffset": 0.0,
+    "bpm": 150,
+    "beatLengthInSeconds": 0.4000000059604645,
+    "totalBeats": 379,
+    "beatMap": [
+        {
+            "Position": 16,
+            "Lane": 2
+        },
+        {
+            "Position": 17,
+            "Lane": 4
+        },
+        {
+            "Position": 19,
+            "Lane": 2
+        },
+        {
+            "Position": 20,
+            "Lane": 4
+        },
+        {
+            "Position": 22,
+            "Lane": 2
+        },
+        {
+            "Position": 23,
+            "Lane": 4
+        },
+        {
+            "Position": 24,
+            "Lane": 2
+        },
+        {
+            "Position": 25,
+            "Lane": 4
+        },
+        {
+            "Position": 27,
+            "Lane": 2
+        },
+        {
+            "Position": 28,
+            "Lane": 4
+        },
+        {
+            "Position": 29,
+            "Lane": 1
+        },
+        {
+            "Position": 30,
+            "Lane": 3
+        },
+        {
+            "Position": 31,
+            "Lane": 2
+        },
+        {
+            "Position": 32,
+            "Lane": 4
+        },
+        {
+            "Position": 34,
+            "Lane": 2
+        },
+        {
+            "Position": 35,
+            "Lane": 4
+        },
+        {
+            "Position": 36,
+            "Lane": 2
+        },
+        {
+            "Position": 37,
+            "Lane": 4
+        },
+        {
+            "Position": 38,
+            "Lane": 2
+        },
+        {
+            "Position": 39,
+            "Lane": 4
+        },
+        {
+            "Position": 40,
+            "Lane": 1
+        },
+        {
+            "Position": 41,
+            "Lane": 3
+        },
+        {
+            "Position": 42,
+            "Lane": 1
+        },
+        {
+            "Position": 43,
+            "Lane": 3
+        },
+        {
+            "Position": 44,
+            "Lane": 1
+        },
+        {
+            "Position": 46,
+            "Lane": 3
+        },
+        {
+            "Position": 47,
+            "Lane": 1
+        },
+        {
+            "Position": 48,
+            "Lane": 2
+        },
+        {
+            "Position": 49,
+            "Lane": 4
+        },
+        {
+            "Position": 50,
+            "Lane": 2
+        },
+        {
+            "Position": 51,
+            "Lane": 4
+        },
+        {
+            "Position": 52,
+            "Lane": 1
+        },
+        {
+            "Position": 53,
+            "Lane": 1
+        },
+        {
+            "Position": 55,
+            "Lane": 2
+        },
+        {
+            "Position": 56,
+            "Lane": 4
+        },
+        {
+            "Position": 57,
+            "Lane": 2
+        },
+        {
+            "Position": 58,
+            "Lane": 4
+        },
+        {
+            "Position": 59,
+            "Lane": 2
+        },
+        {
+            "Position": 60,
+            "Lane": 4
+        },
+        {
+            "Position": 61,
+            "Lane": 2
+        },
+        {
+            "Position": 61,
+            "Lane": 4
+        },
+        {
+            "Position": 62,
+            "Lane": 2
+        },
+        {
+            "Position": 64,
+            "Lane": 1
+        },
+        {
+            "Position": 65,
+            "Lane": 1
+        },
+        {
+            "Position": 67,
+            "Lane": 3
+        },
+        {
+            "Position": 68,
+            "Lane": 3
+        },
+        {
+            "Position": 70,
+            "Lane": 2
+        },
+        {
+            "Position": 72,
+            "Lane": 4
+        },
+        {
+            "Position": 74,
+            "Lane": 2
+        },
+        {
+            "Position": 76,
+            "Lane": 4
+        },
+        {
+            "Position": 78,
+            "Lane": 2
+        },
+        {
+            "Position": 80,
+            "Lane": 2
+        },
+        {
+            "Position": 81,
+            "Lane": 2
+        },
+        {
+            "Position": 82,
+            "Lane": 2
+        },
+        {
+            "Position": 83,
+            "Lane": 2
+        },
+        {
+            "Position": 84,
+            "Lane": 4
+        },
+        {
+            "Position": 85,
+            "Lane": 4
+        },
+        {
+            "Position": 86,
+            "Lane": 4
+        },
+        {
+            "Position": 87,
+            "Lane": 4
+        },
+        {
+            "Position": 88,
+            "Lane": 2
+        },
+        {
+            "Position": 89,
+            "Lane": 2
+        },
+        {
+            "Position": 90,
+            "Lane": 2
+        },
+        {
+            "Position": 91,
+            "Lane": 2
+        },
+        {
+            "Position": 92,
+            "Lane": 4
+        },
+        {
+            "Position": 93,
+            "Lane": 4
+        },
+        {
+            "Position": 94,
+            "Lane": 4
+        },
+        {
+            "Position": 95,
+            "Lane": 4
+        },
+        {
+            "Position": 96,
+            "Lane": 1
+        },
+        {
+            "Position": 97,
+            "Lane": 1
+        },
+        {
+            "Position": 98,
+            "Lane": 1
+        },
+        {
+            "Position": 99,
+            "Lane": 1
+        },
+        {
+            "Position": 100,
+            "Lane": 3
+        },
+        {
+            "Position": 101,
+            "Lane": 3
+        },
+        {
+            "Position": 102,
+            "Lane": 3
+        },
+        {
+            "Position": 103,
+            "Lane": 3
+        },
+        {
+            "Position": 104,
+            "Lane": 2
+        },
+        {
+            "Position": 105,
+            "Lane": 4
+        },
+        {
+            "Position": 106,
+            "Lane": 2
+        },
+        {
+            "Position": 107,
+            "Lane": 4
+        },
+        {
+            "Position": 108,
+            "Lane": 2
+        },
+        {
+            "Position": 109,
+            "Lane": 2
+        },
+        {
+            "Position": 110,
+            "Lane": 2
+        },
+        {
+            "Position": 111,
+            "Lane": 2
+        },
+        {
+            "Position": 112,
+            "Lane": 4
+        },
+        {
+            "Position": 114,
+            "Lane": 2
+        },
+        {
+            "Position": 116,
+            "Lane": 4
+        },
+        {
+            "Position": 119,
+            "Lane": 2
+        },
+        {
+            "Position": 121,
+            "Lane": 4
+        },
+        {
+            "Position": 123,
+            "Lane": 2
+        },
+        {
+            "Position": 125,
+            "Lane": 4
+        },
+        {
+            "Position": 127,
+            "Lane": 2
+        },
+        {
+            "Position": 129,
+            "Lane": 1
+        },
+        {
+            "Position": 131,
+            "Lane": 3
+        },
+        {
+            "Position": 133,
+            "Lane": 1
+        },
+        {
+            "Position": 135,
+            "Lane": 1
+        },
+        {
+            "Position": 137,
+            "Lane": 1
+        },
+        {
+            "Position": 139,
+            "Lane": 1
+        },
+        {
+            "Position": 141,
+            "Lane": 2
+        },
+        {
+            "Position": 143,
+            "Lane": 4
+        },
+        {
+            "Position": 145,
+            "Lane": 2
+        },
+        {
+            "Position": 147,
+            "Lane": 4
+        },
+        {
+            "Position": 149,
+            "Lane": 2
+        },
+        {
+            "Position": 151,
+            "Lane": 4
+        },
+        {
+            "Position": 153,
+            "Lane": 1
+        },
+        {
+            "Position": 155,
+            "Lane": 3
+        },
+        {
+            "Position": 157,
+            "Lane": 2
+        },
+        {
+            "Position": 159,
+            "Lane": 4
+        },
+        {
+            "Position": 161,
+            "Lane": 1
+        },
+        {
+            "Position": 163,
+            "Lane": 1
+        },
+        {
+            "Position": 165,
+            "Lane": 3
+        },
+        {
+            "Position": 167,
+            "Lane": 3
+        },
+        {
+            "Position": 169,
+            "Lane": 2
+        },
+        {
+            "Position": 171,
+            "Lane": 2
+        },
+        {
+            "Position": 173,
+            "Lane": 4
+        },
+        {
+            "Position": 175,
+            "Lane": 4
+        },
+        {
+            "Position": 176,
+            "Lane": 1
+        },
+        {
+            "Position": 178,
+            "Lane": 1
+        },
+        {
+            "Position": 180,
+            "Lane": 1
+        },
+        {
+            "Position": 183,
+            "Lane": 1
+        },
+        {
+            "Position": 185,
+            "Lane": 3
+        },
+        {
+            "Position": 187,
+            "Lane": 3
+        },
+        {
+            "Position": 189,
+            "Lane": 3
+        },
+        {
+            "Position": 191,
+            "Lane": 3
+        },
+        {
+            "Position": 192,
+            "Lane": 2
+        },
+        {
+            "Position": 194,
+            "Lane": 4
+        },
+        {
+            "Position": 197,
+            "Lane": 2
+        },
+        {
+            "Position": 199,
+            "Lane": 4
+        },
+        {
+            "Position": 201,
+            "Lane": 2
+        },
+        {
+            "Position": 203,
+            "Lane": 4
+        },
+        {
+            "Position": 205,
+            "Lane": 2
+        },
+        {
+            "Position": 207,
+            "Lane": 4
+        },
+        {
+            "Position": 216,
+            "Lane": 2
+        },
+        {
+            "Position": 217,
+            "Lane": 4
+        },
+        {
+            "Position": 224,
+            "Lane": 2
+        },
+        {
+            "Position": 225,
+            "Lane": 4
+        },
+        {
+            "Position": 232,
+            "Lane": 2
+        },
+        {
+            "Position": 233,
+            "Lane": 1
+        },
+        {
+            "Position": 240,
+            "Lane": 4
+        },
+        {
+            "Position": 241,
+            "Lane": 2
+        },
+        {
+            "Position": 244,
+            "Lane": 1
+        },
+        {
+            "Position": 246,
+            "Lane": 3
+        },
+        {
+            "Position": 249,
+            "Lane": 2
+        },
+        {
+            "Position": 250,
+            "Lane": 4
+        },
+        {
+            "Position": 256,
+            "Lane": 2
+        },
+        {
+            "Position": 257,
+            "Lane": 4
+        },
+        {
+            "Position": 260,
+            "Lane": 1
+        },
+        {
+            "Position": 263,
+            "Lane": 3
+        },
+        {
+            "Position": 265,
+            "Lane": 2
+        },
+        {
+            "Position": 272,
+            "Lane": 2
+        },
+        {
+            "Position": 274,
+            "Lane": 4
+        },
+        {
+            "Position": 276,
+            "Lane": 2
+        },
+        {
+            "Position": 278,
+            "Lane": 4
+        },
+        {
+            "Position": 280,
+            "Lane": 2
+        },
+        {
+            "Position": 282,
+            "Lane": 4
+        },
+        {
+            "Position": 284,
+            "Lane": 1
+        },
+        {
+            "Position": 286,
+            "Lane": 3
+        },
+        {
+            "Position": 287,
+            "Lane": 3
+        },
+        {
+            "Position": 288,
+            "Lane": 2
+        },
+        {
+            "Position": 289,
+            "Lane": 4
+        },
+        {
+            "Position": 292,
+            "Lane": 2
+        },
+        {
+            "Position": 294,
+            "Lane": 4
+        },
+        {
+            "Position": 296,
+            "Lane": 3
+        },
+        {
+            "Position": 298,
+            "Lane": 1
+        },
+        {
+            "Position": 300,
+            "Lane": 1
+        },
+        {
+            "Position": 302,
+            "Lane": 2
+        },
+        {
+            "Position": 304,
+            "Lane": 4
+        },
+        {
+            "Position": 306,
+            "Lane": 2
+        },
+        {
+            "Position": 309,
+            "Lane": 4
+        },
+        {
+            "Position": 311,
+            "Lane": 2
+        },
+        {
+            "Position": 313,
+            "Lane": 4
+        },
+        {
+            "Position": 316,
+            "Lane": 2
+        },
+        {
+            "Position": 318,
+            "Lane": 4
+        },
+        {
+            "Position": 320,
+            "Lane": 1
+        },
+        {
+            "Position": 321,
+            "Lane": 3
+        },
+        {
+            "Position": 322,
+            "Lane": 1
+        },
+        {
+            "Position": 323,
+            "Lane": 3
+        },
+        {
+            "Position": 324,
+            "Lane": 2
+        },
+        {
+            "Position": 325,
+            "Lane": 4
+        },
+        {
+            "Position": 326,
+            "Lane": 2
+        },
+        {
+            "Position": 327,
+            "Lane": 4
+        },
+        {
+            "Position": 328,
+            "Lane": 1
+        },
+        {
+            "Position": 329,
+            "Lane": 3
+        },
+        {
+            "Position": 330,
+            "Lane": 1
+        },
+        {
+            "Position": 331,
+            "Lane": 3
+        },
+        {
+            "Position": 332,
+            "Lane": 2
+        },
+        {
+            "Position": 333,
+            "Lane": 4
+        },
+        {
+            "Position": 334,
+            "Lane": 2
+        },
+        {
+            "Position": 335,
+            "Lane": 4
+        },
+        {
+            "Position": 336,
+            "Lane": 1
+        },
+        {
+            "Position": 340,
+            "Lane": 2
+        },
+        {
+            "Position": 342,
+            "Lane": 4
+        },
+        {
+            "Position": 344,
+            "Lane": 2
+        },
+        {
+            "Position": 346,
+            "Lane": 4
+        },
+        {
+            "Position": 352,
+            "Lane": 2
+        },
+        {
+            "Position": 353,
+            "Lane": 4
+        },
+        {
+            "Position": 356,
+            "Lane": 2
+        },
+        {
+            "Position": 358,
+            "Lane": 4
+        },
+        {
+            "Position": 360,
+            "Lane": 2
+        },
+        {
+            "Position": 362,
+            "Lane": 4
+        },
+        {
+            "Position": 364,
+            "Lane": 1
+        },
+        {
+            "Position": 365,
+            "Lane": 1
+        },
+        {
+            "Position": 367,
+            "Lane": 3
+        },
+        {
+            "Position": 367,
+            "Lane": 3
+        },
+        {
+            "Position": 368,
+            "Lane": 3
+        }
+    ]
+}

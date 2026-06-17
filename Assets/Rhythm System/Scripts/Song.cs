@@ -33,7 +33,7 @@ public class Song
 {
     public bool active;
     public string songName;
-    public AudioClip songAudio;
+    public string audioFilepath;
     // There is normally a slight offset between the song and it actually starting beats, is worth having even if its normally 0.
     public float songAudioOffset;
     public int bpm;
@@ -52,7 +52,7 @@ public class Song
     public Song()
     {
         songName = "New Song";
-        songAudio = null;
+        audioFilepath = "";
         songAudioOffset = 0f;
         bpm = 0;
         beatLengthInSeconds = 0f;

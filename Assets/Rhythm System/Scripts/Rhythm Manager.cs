@@ -17,8 +17,8 @@ public class RhythmManager : MonoBehaviour
     public double dspDelay;
     public AudioSource speaker;
     // C# stores filepaths as strings, these allow me to set those filepaths from within the unity editor
-    public string LoadSongFilepath;
-    public string SaveSongFilepath;
+    public string LoadSongFileName;
+    public string SaveSongFileName;
 
     
     public void UpdateSongPosition()
@@ -34,7 +34,7 @@ public class RhythmManager : MonoBehaviour
     public void StartSong()
     {
         activeSong.active = true;
-        speaker.clip = activeSong.songAudio;
+        speaker.clip = Resources.Load<AudioClip>(activeSong.audioFilepath);
         speaker.Play();
         dspDelay = (float) AudioSettings.dspTime;
     }
@@ -65,11 +65,11 @@ public class RhythmManager : MonoBehaviour
     // Wrapper functions around the json load/save song utilities
     public void LoadSong()
     {
-        activeSong = Song.LoadSong(LoadSongFilepath);
+        activeSong = Song.LoadSong(System.IO.Path.Combine(Application.streamingAssetsPath, LoadSongFileName));
     }
     public void SaveSong()
     {
-        Song.SaveSong(activeSong,SaveSongFilepath);
+        Song.SaveSong(activeSong,System.IO.Path.Combine(Application.streamingAssetsPath, SaveSongFileName));
     }
     //ALL OF THIS IS BAD CODE, PLEASE REWRITE IT IN THE MORNING JESUS CHRIST, its currently handling player input, but there has to be a cleaner way i swear
     public bool RhythmKeyPressed()

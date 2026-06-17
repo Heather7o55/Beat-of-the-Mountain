@@ -33,7 +33,6 @@ public class RmpDial : MonoBehaviour
     }
     private void UpdateTaco()
     {
-        tmpRotation = rectTransform.rotation.z;
         if(forward)
         {
             t += .6d * songDeltaTime;
@@ -46,13 +45,13 @@ public class RmpDial : MonoBehaviour
         }
         else
         {
-            if(rectTransform.rotation.z == dialRest) return;
-            t += 1d * songDeltaTime;
+            if(rectTransform.rotation.eulerAngles.z  == dialRest) return;
+            t += 2.5d * songDeltaTime;
             rectTransform.eulerAngles = new Vector3(0,0, Mathf.Lerp(tmpRotation, dialRest, (float) t));
         }
         if(t >= 1)
         {
-            tmpRotation = rectTransform.rotation.z;
+            tmpRotation = rectTransform.rotation.eulerAngles.z;
             backward = false;
             forward = false;
             t = 0;

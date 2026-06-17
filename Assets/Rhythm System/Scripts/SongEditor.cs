@@ -47,7 +47,7 @@ public class SongEditorWindow : RhythmManager
     public void CalculateBLISTB()
     {
         activeSong.beatLengthInSeconds = 60f / activeSong.bpm;
-        activeSong.totalBeats = (int) (activeSong.songAudio.length / activeSong.beatLengthInSeconds);
+        activeSong.totalBeats = (int) (speaker.clip.length / activeSong.beatLengthInSeconds);
     }
 
 

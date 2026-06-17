@@ -1104,7 +1104,7 @@ MonoBehaviour:
   activeSong:
     active: 0
     songName: 125
-    songAudio: {fileID: 0}
+    audioFilepath: 
     songAudioOffset: 0
     bpm: 0
     beatLengthInSeconds: 0
@@ -1114,17 +1114,15 @@ MonoBehaviour:
   currentBeat: 0
   dspDelay: 0
   speaker: {fileID: 1047208038}
-  LoadSongFilepath: C:\Users\heath.beaumont.540_a\Beat-of-the-Mountain\Assets\Rhythm
-    System\Song json\OSC.json
-  SaveSongFilepath: C:\Users\heath.beaumont.540_a\Beat-of-the-Mountain\Assets\Rhythm
-    System\Song json\OSC.json
+  LoadSongFileName: OSC.json
+  SaveSongFileName: OSC.json
   visuals:
   - {fileID: 0}
   - {fileID: 2412840863462103095, guid: bb7082ac97187841c90980e7110ba075, type: 3}
   - {fileID: 127970354553387485, guid: cdb9475e0042d65289a5d14f7d618a6c, type: 3}
   - {fileID: 3129277009490010865, guid: 0a93e6bb5c17753c99617460ddcd6c48, type: 3}
   - {fileID: 4220799522450775481, guid: 2c95c7e8fedcecec98bdab9dd6f61dce, type: 3}
-  playbackMode: 1
+  playbackMode: 0
   lastBeat: 0
 --- !u!4 &1047208040
 Transform:
