@@ -783,7 +783,7 @@ MonoBehaviour:
   activeSong:
     active: 0
     songName: New Song
-    songAudio: {fileID: 0}
+    audioFilepath: 
     songAudioOffset: 0
     bpm: 0
     beatLengthInSeconds: 0
@@ -793,9 +793,8 @@ MonoBehaviour:
   currentBeat: 0
   dspDelay: 0
   speaker: {fileID: 5126527959720890632}
-  LoadSongFilepath: /home/heather/Beat-of-the-Mountain/Assets/Rhythm System/Song
-    json/OSC.json
-  SaveSongFilepath: 
+  LoadSongFileName: OSC.json
+  SaveSongFileName: 
 --- !u!1 &710300525
 GameObject:
   m_ObjectHideFlags: 0
