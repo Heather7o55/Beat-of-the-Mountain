@@ -2,7 +2,6 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Collections.Generic;
-
 // Declaring this struct here outside the class allows it to be used across all scripts, quite useful.
 [Serializable]
 public struct Beat
@@ -31,13 +30,17 @@ Technically if we were being sensible this would be a scriptable object, however
 [Serializable]
 public class Song
 {
+    // Honestly this active bool shouldnt be here, it makes no sense to have it within the song class, it should be within the rhythm manager, but extracting it out isn't worth it
     public bool active;
     public string songName;
+    // Previously i was serializing the audio clip itself out to json, but the way unity does that is by giving a reference id, which is editor specific and broke down during compilation, 
+    // to fix this i switched to a filepath, loaded from the unity resources folder which is baked in to compiled games, so i can load this from a local filepath at runtime
     public string audioFilepath;
     // There is normally a slight offset between the song and it actually starting beats, is worth having even if its normally 0.
     public float songAudioOffset;
     public int bpm;
-    // Stole this one from the blog listed in Rhythm Manager, should be useful.
+    // This stores the length of a beat, this is useful for some visual timing calculations and a few other things, 
+    // this was a concept taken from the original blog i based this system off
     public float beatLengthInSeconds;
     /* This might seem pointless as in theory you can just calculate this at runtime, but i figure having cached within the song data is just kinda useful, 
     also depending on how we use this we could stop the rhythm system of iterating over the song when we've got the last active beat. 
@@ -47,8 +50,7 @@ public class Song
     in the rhythm manager we "iterate" over the beat map and instantiate the visuals using this beat map, and we use it to ensure the player is hitting the correct beats. */
     public List<Beat> beatMap;
     
-    /* This is the song constructor, most of it is self explanatory, however it's important to note that songAudio is currently set to null, if this creates issues which it maybe could? 
-    Create a default song audio file and use that. */
+    // This is the song constructor, most of it is self explanatory
     public Song()
     {
         songName = "New Song";
