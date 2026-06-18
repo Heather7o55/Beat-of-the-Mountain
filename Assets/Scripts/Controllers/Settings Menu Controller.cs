@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class SettingsMenuController : MonoBehaviour
 {
-    public float masterVolume = 1f;
-    public float musicVolume = 1f;
-    public float sfxVolume = 1f;
+    public static float masterVolume = 1f;
+    public static float musicVolume = 1f;
+    public static float sfxVolume = 1f;
     public AudioMixer mixer;
     public TMPro.TMP_InputField masterVolumeText;
     public TMPro.TMP_InputField musicVolumeText;
@@ -21,6 +21,7 @@ public class SettingsMenuController : MonoBehaviour
         masterVolumeText.onEndEdit.AddListener(UpdateMasterVolume);
         musicVolumeText.onEndEdit.AddListener(UpdateMusicVolume);
         sfxVolumeText.onEndEdit.AddListener(UpdateSFXVolume);
+        UpdateVolumeGraphics();
     }
 
     // Update is called once per frame

@@ -7,6 +7,7 @@ public class SignSpawner : MonoBehaviour
     public int lastBeat;
     public GameObject leftTurn;
     public GameObject rightTurn;
+    public GameObject stop;
     public GameObject spawn;
     public GameObject destroy;
 
@@ -35,6 +36,13 @@ public class SignSpawner : MonoBehaviour
         if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 4)))
         {
             var i = Instantiate(rightTurn);
+            i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
+            i.GetComponent<SignRenderer>().spawn = spawn;
+            i.GetComponent<SignRenderer>().destroy = destroy;
+        }
+        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 3)))
+        {
+            var i = Instantiate(stop);
             i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
             i.GetComponent<SignRenderer>().spawn = spawn;
             i.GetComponent<SignRenderer>().destroy = destroy;

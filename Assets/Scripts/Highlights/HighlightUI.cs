@@ -7,14 +7,27 @@ using UnityEngine.EventSystems;
 */
 public class HighlightUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public AudioSource audioSource;
+    public string audioClip;
+    private AudioClip i;
     [SerializeField] private GameObject highlight;
+    void Awake()
+    {
+        if(audioClip != "") i = Resources.Load<AudioClip>(audioClip);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         highlight.SetActive(true);
+        if(audioClip != null)
+        {
+            audioSource.clip = i;
+            audioSource.Play();
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         highlight.SetActive(false);
+        if(audioClip != null) audioSource.Stop();
     }
 }

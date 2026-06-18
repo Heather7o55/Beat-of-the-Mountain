@@ -20,7 +20,7 @@ public class SignRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawn == null || destroy == null || rhythmManager == null) return;
+        if(spawn == null || destroy == null || rhythmManager == null || !rhythmManager.activeSong.active) return;
         transform.LookAt(cameratransform);
         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         songDeltaTime = (float) (rhythmManager.songPosition - lastSongPosition);

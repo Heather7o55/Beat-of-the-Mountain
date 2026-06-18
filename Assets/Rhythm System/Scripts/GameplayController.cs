@@ -6,10 +6,6 @@ public class GameplayController : RhythmManager
     {
         LoadSong();
     }
-    void Start()
-    {
-        StartSong();
-    }
 
     // This function keeps the primary beat variables updated and in time/sync, it only runs when the song is active, and if the song is completed it sets the song to be inactive
     void Update()

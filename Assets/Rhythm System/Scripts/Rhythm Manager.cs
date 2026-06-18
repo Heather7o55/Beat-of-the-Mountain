@@ -20,12 +20,13 @@ public class RhythmManager : MonoBehaviour
     public string LoadSongFileName;
     public string SaveSongFileName;
 
-    
+    private double oldSongPosition;
     public void UpdateSongPosition()
     {
         if(currentBeat >= activeSong.totalBeats) activeSong.active = false;
         if(!activeSong.active) return;
-        songPosition = AudioSettings.dspTime -dspDelay -activeSong.songAudioOffset;
+        if(songPosition == 0f) songPosition = AudioSettings.dspTime -dspDelay -activeSong.songAudioOffset;
+        else songPosition = oldSongPosition + AudioSettings.dspTime -dspDelay -activeSong.songAudioOffset;
         currentBeat = (int) (songPosition / activeSong.beatLengthInSeconds);
         // Debug.LogError(songPosition);
         // Debug.LogError((AudioSettings.dspTime -dspDelay) -activeSong.songAudioOffset);
@@ -33,10 +34,20 @@ public class RhythmManager : MonoBehaviour
     // This function Sets the song to active, starts playing the audio, and records the dsp-delay, which is the delay between the song playing and unity updating
     public void StartSong()
     {
-        activeSong.active = true;
         speaker.clip = Resources.Load<AudioClip>(activeSong.audioFilepath);
         speaker.Play();
         dspDelay = (float) AudioSettings.dspTime;
+        activeSong.active = true;
+    }
+    public void PauseSong()
+    {
+        speaker.Pause();
+        activeSong.active = false;
+        oldSongPosition = songPosition;
+    }
+    public void ResumeSong()
+    {
+        
     }
     // This detects if a beat passed to it is "the same" as the current beat in the beatmap, this is intended to be used for scoring, however it has uses in other places.
     public bool OnBeatPerfect(Beat beat)

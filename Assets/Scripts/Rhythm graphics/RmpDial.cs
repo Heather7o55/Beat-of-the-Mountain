@@ -26,6 +26,7 @@ public class RmpDial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!rhythmManager.activeSong.active) return;
         songDeltaTime = (float) (rhythmManager.songPosition - lastSongPosition);
         EnableTaco();
         UpdateTaco();
@@ -37,11 +38,6 @@ public class RmpDial : MonoBehaviour
         {
             t += .6d * songDeltaTime;
             rectTransform.eulerAngles = new Vector3(0,0, Mathf.Lerp(tmpRotation, dialMax, (float) t));
-        }
-        else if(backward)
-        {
-            t += .6d * songDeltaTime;
-            rectTransform.eulerAngles = new Vector3(0,0, Mathf.Lerp(tmpRotation, dialZero, (float) t));
         }
         else
         {
@@ -63,11 +59,6 @@ public class RmpDial : MonoBehaviour
         if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 1)))
         {
             forward = true;
-            t = 0;
-        }
-        else if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 3)))
-        {
-            backward = true;
             t = 0;
         }
         lastBeat = rhythmManager.currentBeat;
