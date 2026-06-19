@@ -43,7 +43,7 @@ public class RhythmManager : MonoBehaviour
     {
         // This is mentioned in the song class, but i moved the song files into the resources folder so they can be loaded in at runtime, 
         // the json now just stores the path to the song rather than an audio clip, so the audio clip is loaded at runtime
-        speaker.clip = Resources.Load<AudioClip>(activeSong.audioFilepath);
+
         speaker.Play();
         dspDelay = (float) AudioSettings.dspTime;
         activeSong.active = true;
@@ -84,6 +84,7 @@ public class RhythmManager : MonoBehaviour
     public void LoadSong()
     {
         activeSong = Song.LoadSong(System.IO.Path.Combine(Application.streamingAssetsPath, LoadSongFileName));
+        speaker.clip = Resources.Load<AudioClip>(activeSong.audioFilepath);
     }
     public void SaveSong()
     {
