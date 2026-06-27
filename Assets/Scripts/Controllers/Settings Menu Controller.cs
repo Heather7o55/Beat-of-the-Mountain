@@ -15,19 +15,12 @@ public class SettingsMenuController : MonoBehaviour
     public Slider masterVolumeSlider;
     public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         masterVolumeText.onEndEdit.AddListener(UpdateMasterVolume);
         musicVolumeText.onEndEdit.AddListener(UpdateMusicVolume);
         sfxVolumeText.onEndEdit.AddListener(UpdateSFXVolume);
         UpdateVolumeGraphics();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void UpdateMasterVolume()
     {
@@ -46,17 +39,17 @@ public class SettingsMenuController : MonoBehaviour
     }
     public void UpdateMasterVolume(string i)
     {
-        masterVolume = (Mathf.Clamp(((float)Int32.Parse(i)) / 100f, 0f, 1f));
+        masterVolume = Mathf.Clamp(int.Parse(i) / 100f, 0f, 1f);
         UpdateVolumeGraphics();
     }
     public void UpdateMusicVolume(string i)
     {
-        musicVolume = (Mathf.Clamp(((float)Int32.Parse(i)) / 100f, 0f, 1f));
+        musicVolume = Mathf.Clamp(int.Parse(i) / 100f, 0f, 1f);
         UpdateVolumeGraphics();
     }
     public void UpdateSFXVolume(string i)
     {
-        sfxVolume = (Mathf.Clamp(((float)Int32.Parse(i)) / 100f, 0f, 1f));
+        sfxVolume = Mathf.Clamp(int.Parse(i) / 100f, 0f, 1f);
         UpdateVolumeGraphics();
     }
     private void UpdateVolumeGraphics()

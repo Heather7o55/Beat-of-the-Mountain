@@ -4,6 +4,8 @@ using UnityEngine;
 // have been put in places they just dont belong. just looking at this class kinda annoys me
 public class GameplayController : RhythmManager
 {
+    public TMPro.TextMeshProUGUI text;
+    public int score;
     // I put this in awake as for a period of time i was debugging what i thought was a race condition
     // but turned out not to be, this could be in start, but there isn't any major point in changing it
     void Awake()
@@ -15,13 +17,13 @@ public class GameplayController : RhythmManager
     {
         if(activeSong == null) return;
         UpdateSongPosition();
-        if(RhythmKeyPressed() && GetLaneKey() != 0)
+        if(RhythmKeyPressed() != 0)
         {
-            if(OnBeatPerfect(new Beat(currentBeat,GetLaneKey())))
+            if(OnBeatPerfect(new Beat(currentBeat,RhythmKeyPressed())))
             {
                 score += 100;
             }
-            else if(OnBeat(new Beat(currentBeat,GetLaneKey())))
+            else if(OnBeat(new Beat(currentBeat,RhythmKeyPressed())))
             {
                 score += 50;
             }

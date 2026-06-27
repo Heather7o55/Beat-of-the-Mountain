@@ -14,9 +14,13 @@ public class SignSpawner : MonoBehaviour
     // These could just be floats as we only end up using the z value, but its too late now
     public GameObject spawn;
     public GameObject destroy;
+    void Start()
+    {
+        RhythmManager.OnBeatEvent.AddListener(SpawnSigns);
+    }
     void Update()
     {
-        if(!rhythmManager.activeSong.active) return;
+        if(!RhythmManager.activeSong.active) return;
         SpawnSigns();
     }
     // This function spawns the signs on beat, with the left, right and stop signs being spawned when beats corresponding to the lanes are found
@@ -24,32 +28,23 @@ public class SignSpawner : MonoBehaviour
     // so we can move the signs into place on beat so the player knows which beats are coming up
     private void SpawnSigns()
     {
-        // This is so we dont endlessly spawn the same sign for the same beat
-        if(lastBeat == rhythmManager.currentBeat) return;
-        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 2)))
+        if(RhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 2)))
         {
-            // i know that doing get component here is a little expensive, but because of the way unity prefabs work, 
-            // i couldnt assign these in editor, and this was the least expensive was i could think to do it at the time. 
-            // however what i could be doing it creating another var and caching the sign renderer, then doing my operations (also it shouldnt be a var, but i didnt wanna type out GameObject)
-            var i = Instantiate(leftTurn);
-            i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
-            i.GetComponent<SignRenderer>().spawn = spawn;
-            i.GetComponent<SignRenderer>().destroy = destroy;
+            var i = Instantiate(leftTurn).GetComponent<SignRenderer>();
+            i.spawn = spawn.transform.position.z;
+            i.destroy = destroy.transform.position.z;
         }
-        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 4)))
+        if(RhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 4)))
         {
-            var i = Instantiate(rightTurn);
-            i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
-            i.GetComponent<SignRenderer>().spawn = spawn;
-            i.GetComponent<SignRenderer>().destroy = destroy;
+            var i = Instantiate(rightTurn).GetComponent<SignRenderer>();
+            i.spawn = spawn.transform.position.z;
+            i.destroy = destroy.transform.position.z;
         }
-        if(rhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 3)))
+        if(RhythmManager.OnBeatPerfect(new Beat(rhythmManager.currentBeat + 5, 3)))
         {
-            var i = Instantiate(stop);
-            i.GetComponent<SignRenderer>().rhythmManager = rhythmManager;
-            i.GetComponent<SignRenderer>().spawn = spawn;
-            i.GetComponent<SignRenderer>().destroy = destroy;
+            var i = Instantiate(stop).GetComponent<SignRenderer>();
+            i.spawn = spawn.transform.position.z;
+            i.destroy = destroy.transform.position.z;
         }
-        lastBeat = rhythmManager.currentBeat;
     }
 }

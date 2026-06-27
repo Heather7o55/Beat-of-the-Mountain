@@ -20,8 +20,8 @@ public class SongEditorWindow : RhythmManager
         Debug.Log(songPosition);
         if(playbackMode) 
             Playback();
-        else if(RhythmKeyPressed() && GetLaneKey() != 0) 
-            AddBeat(GetLaneKey());
+        else if(RhythmKeyPressed()!= 0) 
+            AddBeat(RhythmKeyPressed());
         
     }
     // This allows the rhythm manager to playback the charted song, so your can sure your chart is on beat

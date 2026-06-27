@@ -6,11 +6,11 @@ public class GameController : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
     public GameObject winMenu;
     public GameObject pauseMenu;
-    public RhythmManager rhythmManager;
+    public GameplayController rhythmManager;
     void Update()
     {
         if(Input.GetKeyDown("escape")) PauseGame();
-        if(rhythmManager.currentBeat >= rhythmManager.activeSong.totalBeats) GameWin();
+        if(rhythmManager.currentBeat >= RhythmManager.activeSong.totalBeats) GameWin();
     }
     public void ExitGame()
     {
