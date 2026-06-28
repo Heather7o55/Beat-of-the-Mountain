@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class RhythmManager : MonoBehaviour
 {
     public static Song activeSong = new Song();
+    // look at me using the actual event system
     public static UnityEvent OnBeatEvent;
     public static double SongDeltaTime;
     public static double TimeSinceLastBeat;

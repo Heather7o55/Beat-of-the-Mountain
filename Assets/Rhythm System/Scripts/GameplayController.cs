@@ -27,7 +27,6 @@ public class GameplayController : RhythmManager
             {
                 score += 50;
             }
-
         }
         text.text = $"Score: {score}";
     }

@@ -4,14 +4,13 @@ using UnityEngine;
 public class SignSpawner : MonoBehaviour
 {
     public RhythmManager rhythmManager;
-    // This is so we dont endlessly spawn the same sign for the same beat
     public int lastBeat;
     // prefabs for the 3 types on signs, all assigned in editor
     public GameObject leftTurn;
     public GameObject rightTurn;
     public GameObject stop;
-    // These aren't actually used here in the spawner, we just assign them to the sign renderer class when we instantiate the prefabs, they're used as position data for beat timing maths. 
-    // These could just be floats as we only end up using the z value, but its too late now
+    // These aren't actually used here in the spawner, we just assign them to the sign renderer class when we instantiate the prefabs, 
+    // they're used as position data for beat timing maths. 
     public GameObject spawn;
     public GameObject destroy;
     void Start()
