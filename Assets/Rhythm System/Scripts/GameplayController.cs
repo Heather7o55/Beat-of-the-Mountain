@@ -13,10 +13,8 @@ public class GameplayController : RhythmManager
         LoadSong();
     }
     // The code here should be self explanatory
-    void Update()
+    public override void Update()
     {
-        if(activeSong == null) return;
-        UpdateSongPosition();
         if(RhythmKeyPressed() != 0)
         {
             if(OnBeatPerfect(new Beat(currentBeat,RhythmKeyPressed())))
@@ -29,5 +27,6 @@ public class GameplayController : RhythmManager
             }
         }
         text.text = $"Score: {score}";
+        base.Update();
     }
 }

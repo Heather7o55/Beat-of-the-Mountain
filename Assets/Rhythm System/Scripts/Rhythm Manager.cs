@@ -10,7 +10,7 @@ public class RhythmManager : MonoBehaviour
 {
     public static Song activeSong = new Song();
     // look at me using the actual event system
-    public static UnityEvent OnBeatEvent;
+    public static UnityEvent OnBeatEvent = new UnityEvent();
     public static double SongDeltaTime;
     public static double TimeSinceLastBeat;
     // Song position is seconds, but actually accurate unlike Unity
@@ -29,7 +29,14 @@ public class RhythmManager : MonoBehaviour
     private double oldSongPosition;
     private double lastSongPosition;
     private int lastBeat;
-    public void UpdateSongPosition()
+    public virtual void Update()
+    {
+        if(activeSong == null) return;
+        UpdateSongPosition();
+        CalculateDeltaTime();
+        InvokeEventOnBeat();
+    }
+    private void UpdateSongPosition()
     {
         if(currentBeat >= activeSong.totalBeats) activeSong.active = false;
         if(!activeSong.active) return;
@@ -37,8 +44,6 @@ public class RhythmManager : MonoBehaviour
         as it has no impact if its not in use and saves having an ugly if else or ternary here*/
         songPosition = oldSongPosition + AudioSettings.dspTime -dspDelay -activeSong.songAudioOffset;
         currentBeat = (int) (songPosition / activeSong.beatLengthInSeconds);
-        CalculateDeltaTime();
-        InvokeEventOnBeat();
     }
     // This function Sets the song to active, starts playing the audio, and records the dsp-delay, which is the delay between the song playing and unity updating
     public void StartSong()
@@ -66,7 +71,7 @@ public class RhythmManager : MonoBehaviour
         return false;
     }
     // This detects if a beat passed to it is "the same" as the current beat in the beatmap with a +1-1 margin of error, this is used for scoring
-    public bool OnBeat(Beat beat)
+    public static bool OnBeat(Beat beat)
     {
         if(activeSong.beatMap.Any(tmp => tmp == new Beat(beat.Position +1, beat.Lane) || 
         activeSong.beatMap.Any(tmp => tmp == new Beat(beat.Position -1, beat.Lane))))
@@ -99,7 +104,7 @@ public class RhythmManager : MonoBehaviour
         Song.SaveSong(activeSong,System.IO.Path.Combine(Application.streamingAssetsPath, SaveSongFileName));
     }
     //ALL OF THIS IS BAD CODE, PLEASE REWRITE IT IN THE MORNING JESUS CHRIST, its currently handling player input, but there has to be a cleaner way i swear
-    public int RhythmKeyPressed()
+    public static int RhythmKeyPressed()
     {
         if(!activeSong.active) return 0;
         if(Input.GetKeyDown("w")) return 1;

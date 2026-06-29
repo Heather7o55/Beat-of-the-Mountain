@@ -17,11 +17,6 @@ public class SignSpawner : MonoBehaviour
     {
         RhythmManager.OnBeatEvent.AddListener(SpawnSigns);
     }
-    void Update()
-    {
-        if(!RhythmManager.activeSong.active) return;
-        SpawnSigns();
-    }
     // This function spawns the signs on beat, with the left, right and stop signs being spawned when beats corresponding to the lanes are found
     // its worth noting it does this checks 5 beats ahead of the current beat, so it spawns them before those beats happen,
     // so we can move the signs into place on beat so the player knows which beats are coming up

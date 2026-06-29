@@ -14,15 +14,11 @@ public class SongEditorWindow : RhythmManager
     i don't know if it's best suited to it.*/
     void Update()
     {
-        if(activeSong == null) return;
-        UpdateSongPosition();
-        Debug.Log(currentBeat);
-        Debug.Log(songPosition);
         if(playbackMode) 
             Playback();
         else if(RhythmKeyPressed()!= 0) 
             AddBeat(RhythmKeyPressed());
-        
+        base.Update();
     }
     // This allows the rhythm manager to playback the charted song, so your can sure your chart is on beat
     public void Playback()
